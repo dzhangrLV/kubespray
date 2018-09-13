@@ -21,7 +21,7 @@ docker_package_info:
 
 docker_repo_key_info:
   pkg_key: apt_key
-  url: '{{ docker_debian_repo_gpgkey }}'
+  data: "{{ lookup('url', docker_debian_repo_gpgkey, split_lines=False) }}"
   repo_keys:
     - 9DC858229FC7DD38854AE2D88D81803C0EBFCD88
 
@@ -35,7 +35,7 @@ docker_repo_info:
 
 dockerproject_repo_key_info:
   pkg_key: apt_key
-  url: '{{ dockerproject_apt_repo_gpgkey }}'
+  data: "{{ lookup('url', dockerproject_apt_repo_gpgkey, split_lines=False) }}"
   repo_keys:
     - 58118E89F3A912897C070ADBF76221572C52609D
 
